@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-10T20:13:35.749953" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Logout Test" source="/Users/reynaldiramadhana/sauce_demo_automation/tests/login_logout_test.robot">
+<kw name="Open App" owner="login_keywords" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_PATH}</arg>
+<arg>automationName=UiAutomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-10T20:13:35.834588" elapsed="4.457494"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:35.834286" elapsed="4.458700"/>
+</kw>
+<test id="s1-t1" name="TC001 - Verify Successful Login with Valid Credentials" line="10">
+<kw name="User is on home page" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:41.824755" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/header</msg>
+<arg>${HOME_PAGE}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:40.295954" elapsed="1.530270"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:40.295244" elapsed="1.531962"/>
+</kw>
+<kw name="User click app menu" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:41.866242" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<arg>${APP_MENU_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:41.829383" elapsed="0.037707"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:41.875105" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg time="2025-05-10T20:13:41.976122" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<arg>${APP_MENU_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:41.869091" elapsed="0.107155"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:41.828543" elapsed="0.147806"/>
+</kw>
+<kw name="User click login menu" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:42.906087" level="INFO">xpath criteria: //android.widget.TextView[@text="Log In"]</msg>
+<arg>${LOGIN_MENU_OPTION}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:41.976976" elapsed="0.929389"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:42.909018" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Log In"]'.</msg>
+<msg time="2025-05-10T20:13:43.055621" level="INFO">xpath criteria: //android.widget.TextView[@text="Log In"]</msg>
+<arg>${LOGIN_MENU_OPTION}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:42.906802" elapsed="0.148951"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:41.976618" elapsed="1.079265"/>
+</kw>
+<kw name="User login with credentials" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:43.817139" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET
+criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:43.056675" elapsed="0.760717"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:43.821251" level="INFO">Typing text 'bod@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg time="2025-05-10T20:13:43.906297" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:43.817983" elapsed="0.088425"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:44.437181" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:43.906598" elapsed="0.530665"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:44.438772" level="INFO">Typing text '10203040' into text field 'id=com.saucelabs.mydemoapp.android:id/passwordET'</msg>
+<msg time="2025-05-10T20:13:44.490447" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:44.437392" elapsed="0.053120"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:44.491739" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg time="2025-05-10T20:13:45.091415" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:44.490637" elapsed="0.601128"/>
+</kw>
+<arg>${STANDARD_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-10T20:13:43.056222" elapsed="2.035779"/>
+</kw>
+<kw name="User validate successful login" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:46.282492" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV
+criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<arg>${APP_MENU_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:45.092915" elapsed="1.189810"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:46.285832" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/menuIV'.</msg>
+<msg time="2025-05-10T20:13:47.293516" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/menuIV</msg>
+<arg>${APP_MENU_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:46.283224" elapsed="1.010504"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:47.404582" level="INFO">xpath criteria: //android.widget.TextView[@text="Log Out"]</msg>
+<arg>${LOGOUT_MENU_OPTION}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:47.293978" elapsed="0.110790"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:45.092473" elapsed="2.312602"/>
+</kw>
+<tag>P0</tag>
+<tag>positive</tag>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-10T20:13:40.293421" elapsed="7.112407"/>
+</test>
+<test id="s1-t2" name="TC002 - Verify Successful Logout After Login" line="18">
+<kw name="User logout from app" owner="login_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:47.410037" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Log Out"]'.</msg>
+<msg time="2025-05-10T20:13:47.540645" level="INFO">xpath criteria: //android.widget.TextView[@text="Log Out"]</msg>
+<arg>${LOGOUT_MENU_OPTION}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:47.408284" elapsed="0.132536"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:48.319379" level="INFO">xpath criteria: //android.widget.TextView[@text='Are you sure you want to logout']
+xpath criteria: //android.widget.TextView[@text='Are you sure you want to logout']</msg>
+<arg>${LOGOUT_POPUP}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:47.541347" elapsed="0.778293"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:48.353724" level="INFO">criteria is android:id/button1</msg>
+<arg>${CONFIRM_LOGOUT_BTN}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:48.320037" elapsed="0.033797"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:48.357174" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg time="2025-05-10T20:13:48.423196" level="INFO">criteria is android:id/button1</msg>
+<arg>${CONFIRM_LOGOUT_BTN}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:48.354024" elapsed="0.069285"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:47.407901" elapsed="1.015567"/>
+</kw>
+<kw name="User validate successful logout" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:49.655586" level="INFO">xpath criteria: //android.widget.TextView[@text='Select a username and password from the list below, or click on the username to automatically populate the username and password.']</msg>
+<arg>${LOGIN_PAGE_DESC}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:48.424193" elapsed="1.231546"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:48.423799" elapsed="1.232149"/>
+</kw>
+<tag>P0</tag>
+<tag>positive</tag>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-10T20:13:47.406302" elapsed="2.250121"/>
+</test>
+<test id="s1-t3" name="TC003 - Verify Error Message When Login with Empty Username" line="23">
+<kw name="User click login button" owner="login_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:49.660154" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg time="2025-05-10T20:13:49.778635" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:49.657997" elapsed="0.120736"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:49.657636" elapsed="0.121194"/>
+</kw>
+<kw name="User validate error message username is required" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:50.432912" level="INFO">xpath criteria: //android.widget.TextView[@text="Username is required"]</msg>
+<arg>${ERR_MSG_USERNAME_REQUIRED}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:49.779697" elapsed="0.653400"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:49.779094" elapsed="0.654194"/>
+</kw>
+<tag>negative</tag>
+<tag>P2</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-10T20:13:49.656820" elapsed="0.776831"/>
+</test>
+<test id="s1-t4" name="TC004 - Verify Error Message When Login with Empty Password" line="28">
+<kw name="User enter username" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:50.462377" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:50.435327" elapsed="0.027155"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:50.464512" level="INFO">Typing text 'bod@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg time="2025-05-10T20:13:50.507106" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:50.462666" elapsed="0.044551"/>
+</kw>
+<arg>${STANDARD_USER}</arg>
+<status status="PASS" start="2025-05-10T20:13:50.434980" elapsed="0.072339"/>
+</kw>
+<kw name="User click login button" owner="login_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:50.509992" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg time="2025-05-10T20:13:51.574021" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:50.507998" elapsed="1.066335"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:50.507708" elapsed="1.066860"/>
+</kw>
+<kw name="User validate error message password is required" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:51.638048" level="INFO">xpath criteria: //android.widget.TextView[@text="Enter Password"]</msg>
+<arg>${ERR_MSG_PASSWORD_REQUIRED}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:51.575691" elapsed="0.062498"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:51.575123" elapsed="0.063180"/>
+</kw>
+<tag>negative</tag>
+<tag>P2</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-10T20:13:50.434117" elapsed="1.204438"/>
+</test>
+<test id="s1-t5" name="TC005 - Verify Error Message When Login with Locked User" line="34">
+<kw name="Clear Username Field" owner="login_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:51.641997" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/nameET'.</msg>
+<msg time="2025-05-10T20:13:51.703678" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:51.640023" elapsed="0.063797"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:51.706716" level="INFO">Clear text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg time="2025-05-10T20:13:53.461072" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:51.704093" elapsed="1.757744"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:51.639711" elapsed="1.822786"/>
+</kw>
+<kw name="User login with credentials" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:54.249955" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:53.465450" elapsed="0.784705"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:54.252863" level="INFO">Typing text 'alice@example.com' into text field 'id=com.saucelabs.mydemoapp.android:id/nameET'</msg>
+<msg time="2025-05-10T20:13:54.297255" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/nameET</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:54.250369" elapsed="0.047113"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:54.968546" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:54.297671" elapsed="0.671307"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:54.973262" level="INFO">Typing text '10203040' into text field 'id=com.saucelabs.mydemoapp.android:id/passwordET'</msg>
+<msg time="2025-05-10T20:13:55.012883" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/passwordET</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:54.970317" elapsed="0.042701"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:55.016049" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg time="2025-05-10T20:13:55.581949" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:55.013315" elapsed="0.568746"/>
+</kw>
+<arg>${LOCKED_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-10T20:13:53.464168" elapsed="2.118094"/>
+</kw>
+<kw name="User click login button" owner="login_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:55.585130" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/loginBtn'.</msg>
+<msg time="2025-05-10T20:13:56.193195" level="INFO">criteria is com.saucelabs.mydemoapp.android:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-05-10T20:13:55.583205" elapsed="0.610043"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:55.582842" elapsed="0.610452"/>
+</kw>
+<kw name="User validate unsuccessful login with locked user" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-05-10T20:13:56.728926" level="INFO">xpath criteria: //android.widget.TextView[@text="Sorry this user has been locked out."]</msg>
+<arg>${ERR_MSG_LOCKED_USER}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-05-10T20:13:56.193599" elapsed="0.536593"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:56.193434" elapsed="0.537473"/>
+</kw>
+<tag>negative</tag>
+<tag>P2</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-10T20:13:51.638869" elapsed="5.092917"/>
+</test>
+<kw name="Close App" owner="login_keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-05-10T20:13:56.734812" elapsed="0.813924"/>
+</kw>
+<status status="PASS" start="2025-05-10T20:13:56.734079" elapsed="0.815688"/>
+</kw>
+<doc>Test login and logout on Sauce Demo Android app</doc>
+<status status="PASS" start="2025-05-10T20:13:35.750439" elapsed="21.799479"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">negative</stat>
+<stat pass="2" fail="0" skip="0">P0</stat>
+<stat pass="3" fail="0" skip="0">P2</stat>
+<stat pass="2" fail="0" skip="0">positive</stat>
+<stat pass="5" fail="0" skip="0">regression</stat>
+<stat pass="2" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Login Logout Test" id="s1" pass="5" fail="0" skip="0">Login Logout Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
